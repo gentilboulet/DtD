@@ -13,6 +13,8 @@ class DotBar extends React.Component {
     }
 
     this.renderOneDot=this.renderOneDot.bind(this);
+    if (this.props.length <= 0) { throw(new Error('DotBar length should be >0')); }
+    if (this.props.length < this.props.value) { throw( new Error('DotBar length is < than its value')); }
   }
 
   render() {

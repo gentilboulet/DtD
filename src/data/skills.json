@@ -1,0 +1,94 @@
+[
+  {
+    "name": "academics",
+    "type": "mental"
+  },
+  {
+    "name": "computers",
+    "type": "mental"
+  },
+  {
+    "name": "crafts",
+    "type": "mental"
+  },
+  {
+    "name": "investigation",
+    "type": "mental"
+  },
+  {
+    "name": "medecine",
+    "type": "mental"
+  },
+  {
+    "name": "occult",
+    "type": "mental"
+  },
+  {
+    "name": "science",
+    "type": "mental"
+  },
+  {
+    "name": "athletics",
+    "type": "physical"
+  },
+  {
+    "name": "brawl",
+    "type": "physical"
+  },
+  {
+    "name": "drive",
+    "type": "physical"
+  },
+  {
+    "name": "firearms",
+    "type": "physical"
+  },
+  {
+    "name": "larceny",
+    "type": "physical"
+  },
+  {
+    "name": "stealth",
+    "type": "physical"
+  },
+  {
+    "name": "survival",
+    "type": "physical"
+  },
+  {
+    "name": "weaponry",
+    "type": "physical"
+  },
+  {
+    "name": "animal ken",
+    "type": "social"
+  },
+  {
+    "name": "empathy",
+    "type": "social"
+  },
+  {
+    "name": "expression",
+    "type": "social"
+  },
+  {
+    "name": "intimidation",
+    "type": "social"
+  },
+  {
+    "name": "persuatsion",
+    "type": "social"
+  },
+  {
+    "name": "socialize",
+    "type": "social"
+  },
+  {
+    "name": "streetwise",
+    "typr": "social"
+  },
+  {
+    "name": "subterfuge",
+    "type": "social"
+  }
+]

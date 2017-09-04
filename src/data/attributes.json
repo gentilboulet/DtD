@@ -1,0 +1,47 @@
+[
+  {
+    "name": "strength",
+    "type": "power",
+    "category": "physical"
+  },
+  {
+    "name": "dexterity",
+    "type": "finesse",
+    "category": "physical"
+  },
+  {
+    "name": "stamina",
+    "type": "resistance",
+    "category": "physical"
+  },
+  {
+    "name": "intelligence",
+    "type": "power",
+    "category": "mental"
+  },
+  {
+    "name": "wits",
+    "type": "finesse",
+    "category": "mental"
+  },
+  {
+    "name": "resolve",
+    "type": "resistance",
+    "category": "mental"
+  },
+  {
+    "name": "charisma",
+    "type": "power",
+    "category": "social"
+  },
+  {
+    "name": "manipulation",
+    "type": "finesse",
+    "category": "social"
+  },
+  {
+    "name": "composure",
+    "type": "resistance",
+    "category": "social"
+  }
+]
