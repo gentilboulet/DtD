@@ -2,10 +2,6 @@ import * as React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 class CharacterHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Container>

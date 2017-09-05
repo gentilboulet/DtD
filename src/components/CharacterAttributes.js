@@ -1,6 +1,7 @@
 import * as React from 'react';
 import attributes from 'data/attributes.json';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
+import Column from 'components/Column';
 import DotBar from 'components/DotBar';
 
 const attributes_types = [
@@ -13,13 +14,7 @@ class CharacterAtributes extends React.Component {
     return (
       <Container>
         <Row>
-          <Col
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              xl={12}
-          >Attributes</Col>
+          <Column>Attributes</Column>
         </Row>
         {attributes_types.map(t => this.renderRow(t))}
       </Container>
@@ -30,43 +25,18 @@ class CharacterAtributes extends React.Component {
     let i = 0;
     return (
       <Row key={'attribute' + type.name}>
-      <Col
-          xs={3}
-          sm={3}
-          md={3}
-          lg={3}
-          xl={3}
-      >{type.name}</Col>
+      <Column width={3}>{type.name}</Column>
         {
           attributes
             .filter(a => (a.type === type.type))
             .map(a => {
               return (
-                <Col
-                    xs={3}
-                    sm={3}
-                    md={3}
-                    lg={3}
-                    xl={3}
-                    key={'attribute' + a.name}
-                >
+                <Column width={3} key={'attribute' + a.name}>
                   <Row>
-                    <Col
-                        xs={6}
-                        sm={6}
-                        md={6}
-                        lg={6}
-                        xl={6}
-                    >{a.name}</Col>
-                    <Col
-                        xs={6}
-                        sm={6}
-                        md={6}
-                        lg={6}
-                        xl={6}
-                    ><DotBar length={4} value={++i} /></Col>
+                    <Column width={6}>{a.name}</Column>
+                    <Column width={6}><DotBar length={4} value={++i} /></Column>
                   </Row>
-                </Col>
+                </Column>
                 )
             })
         }
