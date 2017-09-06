@@ -8,7 +8,7 @@ const skills_types = [
   {name: 'social', unskilled: '-1'},
   {name: 'physical', unskilled: '-1' }]
 
-class CharacterSkills extends React.Component {
+class DemonSkills extends React.Component {
   render() {
     return (
       <Container>
@@ -39,4 +39,4 @@ class CharacterSkills extends React.Component {
   }
 }
 
-export default CharacterSkills;
+export default DemonSkills;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import AppHeader from 'components/AppHeader';
-import Character from 'components/Character';
+import Character from 'containers/Character';
 
 class Homepage extends React.Component {
   render() {

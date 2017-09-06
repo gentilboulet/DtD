@@ -1,23 +1,17 @@
 import * as React from 'react';
-import { Container, Row } from 'reactstrap';
-import Column from 'components/Column';
-import CharacterAttributes from 'components/CharacterAttributes';
-import CharacterHeader from 'components/CharacterHeader';
-import CharacterSkills from 'components/CharacterSkills';
-import CharacterOtherTraits from 'components/CharacterOtherTraits';
+import { Container } from 'reactstrap';
+import PropTypes from 'prop-types';
+import Demon from 'components/Demon';
 
-class Character extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Row><Column><CharacterHeader /></Column></Row>
-        <Row><Column><CharacterAttributes /></Column></Row>
-        <Row>
-          <Column width={4}><CharacterSkills /></Column>
-          <Column width={8}><CharacterOtherTraits /></Column>
-        </Row>
-      </Container>);
+const Character = character => {
+  switch(character.type) {
+    case 'CHAR_TYPE_DEMON': return <Demon character={character} />
+    default: return <Container color="danger">Error : character type not set</Container>
   }
-}
+};
+
+Character.propTypes = {
+  type: PropTypes.string.isRequired,
+};
 
 export default Character;

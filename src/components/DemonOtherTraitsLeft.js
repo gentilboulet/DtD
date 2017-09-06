@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container, Row } from 'reactstrap';
 import Column from 'components/Column';
 
-class CharacterOtherTraitsLeft extends React.Component {
+class DemonOtherTraitsLeft extends React.Component {
   render() {
     return (
       <Container>
@@ -14,4 +14,4 @@ class CharacterOtherTraitsLeft extends React.Component {
   }
 }
 
-export default CharacterOtherTraitsLeft;
+export default DemonOtherTraitsLeft;

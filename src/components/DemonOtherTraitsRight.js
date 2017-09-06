@@ -3,7 +3,7 @@ import { Container, Row } from 'reactstrap';
 import Column from 'components/Column';
 import DotBar from 'components/DotBar';
 
-class CharacterOtherTraitsRight extends React.Component {
+class DemonOtherTraitsRight extends React.Component {
   render() {
     return (
       <Container>
@@ -106,4 +106,4 @@ class CharacterOtherTraitsRight extends React.Component {
   }
 }
 
-export default CharacterOtherTraitsRight;
+export default DemonOtherTraitsRight;

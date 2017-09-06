@@ -1,3 +1,5 @@
+import { state } from 'state/class';
+
 export function initialStateFactory() {
-  return { };
+  return new state();
 }
