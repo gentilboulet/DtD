@@ -17,9 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    dispatch: {
-      // onSetName: name => dispatch({type: 'HEADER_SET_NAME', name: name})
-    }
+    onChange : (attribute, newValue) => { dispatch({ type: 'ATTRIBUTE_SET', name: attribute, value: newValue}); }
   };
 };
 

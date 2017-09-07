@@ -13,12 +13,18 @@ class DotBar extends React.Component {
       default: this.shape='circle';
     }
 
+    this.state = {
+      hover: this.props.value,
+    }
+
     if (this.props.length <= 0) { throw(new Error('DotBar length should be >0')); }
     if (this.props.length < this.props.value) { throw( new Error('DotBar length is < than its value')); }
 
     this.dynamic = (! this.props.onClick ) ? false : true ;
 
     this.renderOneDot=this.renderOneDot.bind(this);
+    this.setHover = this.setHover.bind(this);
+    this.resetHover = this.resetHover.bind(this);
   }
 
   render() {
@@ -27,15 +33,32 @@ class DotBar extends React.Component {
   }
 
   renderOneDot(fill, id) {
-    const name = fill ? this.shape : this.shape + '-o';
     if (! this.dynamic) {
+      const name = fill ? this.shape : this.shape + '-o';
       return <Icon name={name} key={id} />
     } else {
-      const noop = () => {};
-      const click = () => { this.props.onClick(id); };
-      return <div onClick={(this.props.value === id) ? noop : click} ><Icon name={name} key={id} /></div>
+      var name = fill ? this.shape : this.shape + '-o';
+      if (fill) {
+        if (this.state.hover < id) { name = 'minus-' + this.shape; }
+      } else {
+        if (this.state.hover >= id) { name = 'plus-' + this.shape; }
+      }
+
+      return <Icon name={name} onClick={ () => this.props.onClick(id) }
+                   onMouseOver={ () => this.setHover(id) }
+                   onMouseOut={ () => this.resetHover() } key={id} />
     }
   }
+
+  setHover(id) {
+    if (id >= 0 && id <= this.props.length) {
+      this.setState({
+        hover : id,
+      });
+    }
+  }
+
+  resetHover() { this.setState({ hover: this.props.value }); }
 }
 
 DotBar.propTypes = {

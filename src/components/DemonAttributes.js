@@ -34,7 +34,12 @@ class DemonAtributes extends React.Component {
                 <Column width={3} key={'attribute' + a.name}>
                   <Row>
                     <Column width={6}>{a.name}</Column>
-                    <Column width={6}><DotBar length={4} value={this.props[a.name]} /></Column>
+                    <Column width={6}>
+                      <DotBar
+                        length={4} value={this.props[a.name]}
+                        onClick={ (val) => { this.props.onChange(a.name, val); } }
+                      />
+                    </Column>
                   </Row>
                 </Column>
                 )
@@ -54,6 +59,7 @@ DemonAtributes.propTypes = {
   intelligence: PropTypes.number.isRequired,
   wits: PropTypes.number.isRequired,
   resolve: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default DemonAtributes;
