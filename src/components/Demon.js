@@ -4,10 +4,10 @@ import Column from 'components/Column';
 
 import DemonAttributes from 'containers/DemonAttributes';
 import DemonHeader from 'containers/DemonHeader';
-import DemonSkills from 'components/DemonSkills';
+import DemonSkills from 'containers/DemonSkills';
 import DemonOtherTraits from 'components/DemonOtherTraits';
 
-class Demon extends React.Component {
+class Demon extends React.PureComponent {
   render() {
     return (
       <Container>

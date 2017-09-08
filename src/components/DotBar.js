@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // circle, circle-o, square, square-o
 
-class DotBar extends React.Component {
+class DotBar extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -13,9 +13,7 @@ class DotBar extends React.Component {
       default: this.shape='circle';
     }
 
-    this.state = {
-      hover: this.props.value,
-    }
+    this.state = { hover: -1 };
 
     if (this.props.length <= 0) { throw(new Error('DotBar length should be >0')); }
     if (this.props.length < this.props.value) { throw( new Error('DotBar length is < than its value')); }
@@ -29,17 +27,19 @@ class DotBar extends React.Component {
 
   render() {
     const range = (start, end) => Array.from({length: (end - start + 1)}, (v, k) => k + start);
-    return <div>{range(1, this.props.length).map(n => this.renderOneDot(n<=this.props.value, n))}</div>;
+    const start = (this.props.resetTo0) ? 0 : 1;
+    const style = {textAlign: 'right'};
+    return <div style={style} >{range(start, this.props.length).map(n => this.renderOneDot(n<=this.props.value && n > 0, n))}</div>;
   }
 
   renderOneDot(fill, id) {
     if (! this.dynamic) {
-      const name = fill ? this.shape : this.shape + '-o';
+      const name = fill ? this.shape : this.shape  + '-o';
       return <Icon name={name} key={id} />
-    } else {
+    } else if (id > 0) {
       var name = fill ? this.shape : this.shape + '-o';
       if (fill) {
-        if (this.state.hover < id) { name = 'minus-' + this.shape; }
+        if (this.state.hover < id) { name = 'minus-' + this.shape + '-o'; }
       } else {
         if (this.state.hover >= id) { name = 'plus-' + this.shape; }
       }
@@ -47,6 +47,16 @@ class DotBar extends React.Component {
       return <Icon name={name} onClick={ () => this.props.onClick(id) }
                    onMouseOver={ () => this.setHover(id) }
                    onMouseOut={ () => this.resetHover() } key={id} />
+    } else { // dynamic && id == 0
+      const name = this.shape === 'circle' ? 'times-circle-o' : 'times-rectangle-o'
+      const icon = <Icon key={id} name={name}
+        onClick={ () => this.props.onClick(id) } onMouseOut={ () => this.resetHover() } />
+      if (this.state.hover === 0) {
+        return icon;
+      } else {
+        return <span onMouseOver={ () => this.setHover(id) }
+                onMouseOut={ () => this.resetHover() } key={id} >&nbsp;&nbsp;&nbsp;</span>
+      }
     }
   }
 
@@ -58,7 +68,7 @@ class DotBar extends React.Component {
     }
   }
 
-  resetHover() { this.setState({ hover: this.props.value }); }
+  resetHover() { this.setState({ hover: -1 }); }
 }
 
 DotBar.propTypes = {

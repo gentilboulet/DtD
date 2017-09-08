@@ -10,7 +10,7 @@ const attributes_types = [
   {name: 'Finesse', type:'finesse'},
   {name: 'Resistance', type: 'resistance' }]
 
-class DemonAtributes extends React.Component {
+class DemonAtributes extends React.PureComponent {
   render() {
     return (
       <Container>

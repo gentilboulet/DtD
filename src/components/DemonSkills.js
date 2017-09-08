@@ -8,7 +8,7 @@ const skills_types = [
   {name: 'social', unskilled: '-1'},
   {name: 'physical', unskilled: '-1' }]
 
-class DemonSkills extends React.Component {
+class DemonSkills extends React.PureComponent {
   render() {
     return (
       <Container>
@@ -26,15 +26,24 @@ class DemonSkills extends React.Component {
         {
           skills
             .filter(s => { return s.type === type.name; })
-            .map(s => {
-              return (
-                <Row key={'skill' + s.name}>
-                  <Col>{s.name}</Col><Col><DotBar length={5} value={2}/></Col>
-                </Row>
-              );
-            })
+            .map(s => { return this.renderOneSkill(s.name); })
         }
       </Container>
+    );
+  }
+
+  renderOneSkill(name) {
+    const value = !this.props.skills[name]
+      ?  0
+      : this.props.skills[name].value;
+    return (
+      <Row key={'skill' + name}>
+        <Col>{name}</Col>
+        <Col>
+          <DotBar length={5} value={value}
+                  resetTo0={true} onClick={(val) => { this.props.onChange(name, val); } }/>
+        </Col>
+      </Row>
     );
   }
 }

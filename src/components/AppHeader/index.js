@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './header.css';
 
-class AppHeader extends React.Component {
+class AppHeader extends React.PureComponent {
   render() {
     return (
       <div className="header">

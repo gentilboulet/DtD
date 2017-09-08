@@ -3,7 +3,7 @@ import { Container, Row } from 'reactstrap';
 import Column from 'components/Column';
 import DotBar from 'components/DotBar';
 
-class DemonOtherTraitsRight extends React.Component {
+class DemonOtherTraitsRight extends React.PureComponent {
   render() {
     return (
       <Container>

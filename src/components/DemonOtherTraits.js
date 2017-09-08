@@ -4,7 +4,7 @@ import Column from 'components/Column';
 import DemonOtherTraitsLeft from 'components/DemonOtherTraitsLeft';
 import DemonOtherTraitsRight from 'components/DemonOtherTraitsRight';
 
-class DemonOtherTraits extends React.Component {
+class DemonOtherTraits extends React.PureComponent {
   render() {
     return (
       <Container>

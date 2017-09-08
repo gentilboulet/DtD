@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col } from 'reactstrap';
 
-class Column extends React.Component {
+class Column extends React.PureComponent {
   constructor(props) {
     super(props);
     if ((this.props.width) && (this.props.width <= 0 || this.props.width >12)) {

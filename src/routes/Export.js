@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import AppHeader from 'components/AppHeader';
 
-class Export extends React.Component {
+class Export extends React.PureComponent {
   render() {
     return (
       <div>
