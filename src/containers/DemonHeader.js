@@ -6,7 +6,6 @@ const mapStateToProps = state => {
     name: state.getIn(['character', 'name']),
     player: state.getIn(['character', 'player']),
     chronicle: state.getIn(['character', 'chronicle']),
-    type: state.getIn(['character', 'type']),
     concept: state.getIn(['character', 'concept']),
     vice: state.getIn(['character', 'vice']),
     virtue: state.getIn(['character', 'virtue']),
@@ -18,9 +17,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    dispatch: {
-      onSetName: name => dispatch({type: 'HEADER_SET_NAME', name: name})
-    }
+    onSetName:        value => dispatch({type: 'HEADER_SET_NAME',        name: value}),
+    onSetPlayer:      value => dispatch({type: 'HEADER_SET_PLAYER',      player: value}),
+    onSetChronicle:   value => dispatch({type: 'HEADER_SET_CHRONICLE',   chronicle: value}),
+    onSetConcept:     value => dispatch({type: 'HEADER_SET_CONCEPT',     concept: value}),
+    onSetVice:        value => dispatch({type: 'HEADER_SET_VICE',        vice: value}),
+    onSetVirtue:      value => dispatch({type: 'HEADER_SET_VIRTUE',      virtue: value}),
+    onSetIncarnation: value => dispatch({type: 'HEADER_SET_INCARNATION', incarnation: value}),
+    onSetAgenda:      value => dispatch({type: 'HEADER_SET_AGENDA',      agenda: value}),
+    onSetCatalyst:    value => dispatch({type: 'HEADER_SET_CATALYST',    catalyst: value})
   };
 };
 

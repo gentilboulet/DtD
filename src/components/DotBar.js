@@ -19,17 +19,35 @@ class DotBar extends React.PureComponent {
     if (this.props.length < this.props.value) { throw( new Error('DotBar length is < than its value')); }
 
     this.dynamic = (! this.props.onClick ) ? false : true ;
+    this.resetTo0 = (! this.props.resetTo0) ? false : true;
 
-    this.renderOneDot=this.renderOneDot.bind(this);
+    this.renderLeftestDot = this.renderLeftestDot.bind(this);
+    this.renderOneDot = this.renderOneDot.bind(this);
     this.setHover = this.setHover.bind(this);
     this.resetHover = this.resetHover.bind(this);
   }
 
   render() {
     const range = (start, end) => Array.from({length: (end - start + 1)}, (v, k) => k + start);
-    const start = (this.props.resetTo0) ? 0 : 1;
     const style = {textAlign: 'right'};
-    return <div style={style} >{range(start, this.props.length).map(n => this.renderOneDot(n<=this.props.value && n > 0, n))}</div>;
+    return (
+      <div style={style} >
+        {this.renderLeftestDot()}
+        {range(0, this.props.length).map(n => this.renderOneDot(n<=this.props.value && n > 0, n))}
+      </div>
+    );
+  }
+
+  renderLeftestDot() {
+    if (! this.dynamic) { return; }
+    if (this.state.hover === 0) {
+      const name = this.shape === 'circle' ? 'times-circle-o' : 'times-rectangle-o'
+      return <Icon key={0} name={name}
+        onClick={ () => this.props.onClick(0) } onMouseOut={ () => this.resetHover() } />;
+    } else if(this.resetTo0) {
+      return <span onMouseOver={ () => this.setHover(0) }
+              onMouseOut={ () => this.resetHover() } key={0} >&nbsp;&nbsp;&nbsp;</span>;
+    }
   }
 
   renderOneDot(fill, id) {
@@ -38,25 +56,16 @@ class DotBar extends React.PureComponent {
       return <Icon name={name} key={id} />
     } else if (id > 0) {
       var name = fill ? this.shape : this.shape + '-o';
-      if (fill) {
-        if (this.state.hover < id) { name = 'minus-' + this.shape + '-o'; }
-      } else {
-        if (this.state.hover >= id) { name = 'plus-' + this.shape; }
+      if (this.state.hover >= 0) {
+        if (fill) {
+          if (this.state.hover < id) { name = 'minus-' + this.shape + '-o'; }
+        } else {
+          if (this.state.hover >= id) { name = 'plus-' + this.shape; }
+        }
       }
-
       return <Icon name={name} onClick={ () => this.props.onClick(id) }
                    onMouseOver={ () => this.setHover(id) }
                    onMouseOut={ () => this.resetHover() } key={id} />
-    } else { // dynamic && id == 0
-      const name = this.shape === 'circle' ? 'times-circle-o' : 'times-rectangle-o'
-      const icon = <Icon key={id} name={name}
-        onClick={ () => this.props.onClick(id) } onMouseOut={ () => this.resetHover() } />
-      if (this.state.hover === 0) {
-        return icon;
-      } else {
-        return <span onMouseOver={ () => this.setHover(id) }
-                onMouseOut={ () => this.resetHover() } key={id} >&nbsp;&nbsp;&nbsp;</span>
-      }
     }
   }
 
@@ -75,7 +84,7 @@ DotBar.propTypes = {
   shape: PropTypes.oneOf(['circle','square']),
   length: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default DotBar;
