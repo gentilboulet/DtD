@@ -58,7 +58,7 @@ class DotBar extends React.PureComponent {
       var name = fill ? this.shape : this.shape + '-o';
       if (this.state.hover >= 0) {
         if (fill) {
-          if (this.state.hover < id) { name = 'minus-' + this.shape + '-o'; }
+          if (this.state.hover < id) { name = 'minus-' + this.shape; }
         } else {
           if (this.state.hover >= id) { name = 'plus-' + this.shape; }
         }

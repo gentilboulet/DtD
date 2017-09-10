@@ -2,21 +2,15 @@ import { connect } from 'react-redux';
 import DemonSkills from 'components/DemonSkills';
 
 const mapStateToProps = state => {
+  const stateSkills = state.getIn(['character', 'skills']);
   return {
-    skills : [
-      state.getIn(['character', 'skills']).map(key => {
-        return {
-          name : key,
-          value : state.getIn(['character', 'skills', 'value'])
-        };
-      })
-    ]
+    skills : stateSkills.toJS()
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onChange : (skill, newValue) => { dispatch({ type: 'SKILL_SET', name: skill, value: newValue}); }
+    onChange : (skill, newValue) => { dispatch({ type: 'CHARACTER_SKILL_SET', name: skill, value: newValue}); }
   };
 };
 

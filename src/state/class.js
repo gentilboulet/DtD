@@ -2,7 +2,7 @@ import * as Immutable from 'immutable';
 
 const _default = {
   character: Immutable.Map({
-    type: 'CHAR_TYPE_DEMON',
+    type: 'CHARACTER_TYPE_DEMON',
     name: '',
     player: '',
     chronicle: '',
@@ -13,15 +13,15 @@ const _default = {
     agenda: '',
     catalyst: '',
     attributes: Immutable.Map({
-      strength: 1,
-      intelligence: 1,
-      charisma: 1,
-      dexterity: 1,
-      wits: 1,
-      manipulation: 1,
-      stamina: 1,
-      resolve: 1,
-      composure: 1,
+      strength: Immutable.Map({value: 1}),
+      intelligence: Immutable.Map({value: 1}),
+      charisma: Immutable.Map({value: 1}),
+      dexterity: Immutable.Map({value: 1}),
+      wits: Immutable.Map({value: 1}),
+      manipulation: Immutable.Map({value: 1}),
+      stamina: Immutable.Map({value: 1}),
+      resolve: Immutable.Map({value: 1}),
+      composure: Immutable.Map({value: 1})
     }),
     skills: Immutable.Map({}),
     merits: Immutable.Map({}),

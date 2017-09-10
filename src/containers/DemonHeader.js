@@ -17,15 +17,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSetName:        value => dispatch({type: 'HEADER_SET_NAME',        name: value}),
-    onSetPlayer:      value => dispatch({type: 'HEADER_SET_PLAYER',      player: value}),
-    onSetChronicle:   value => dispatch({type: 'HEADER_SET_CHRONICLE',   chronicle: value}),
-    onSetConcept:     value => dispatch({type: 'HEADER_SET_CONCEPT',     concept: value}),
-    onSetVice:        value => dispatch({type: 'HEADER_SET_VICE',        vice: value}),
-    onSetVirtue:      value => dispatch({type: 'HEADER_SET_VIRTUE',      virtue: value}),
-    onSetIncarnation: value => dispatch({type: 'HEADER_SET_INCARNATION', incarnation: value}),
-    onSetAgenda:      value => dispatch({type: 'HEADER_SET_AGENDA',      agenda: value}),
-    onSetCatalyst:    value => dispatch({type: 'HEADER_SET_CATALYST',    catalyst: value})
+    onSetName:        value => dispatch({type: 'CHARACTER_HEADER_SET_NAME',        name: value}),
+    onSetPlayer:      value => dispatch({type: 'CHARACTER_HEADER_SET_PLAYER',      player: value}),
+    onSetChronicle:   value => dispatch({type: 'CHARACTER_HEADER_SET_CHRONICLE',   chronicle: value}),
+    onSetConcept:     value => dispatch({type: 'CHARACTER_HEADER_SET_CONCEPT',     concept: value}),
+    onSetVice:        value => dispatch({type: 'CHARACTER_HEADER_SET_VICE',        vice: value}),
+    onSetVirtue:      value => dispatch({type: 'CHARACTER_HEADER_SET_VIRTUE',      virtue: value}),
+    onSetIncarnation: value => dispatch({type: 'CHARACTER_HEADER_SET_INCARNATION', incarnation: value}),
+    onSetAgenda:      value => dispatch({type: 'CHARACTER_HEADER_SET_AGENDA',      agenda: value}),
+    onSetCatalyst:    value => dispatch({type: 'CHARACTER_HEADER_SET_CATALYST',    catalyst: value})
   };
 };
 

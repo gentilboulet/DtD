@@ -8,13 +8,14 @@ const DemonHeader = props => {
     <Container>
       <Row>
         <Col>Name</Col>
-        <Col><EditText label="Name" value={props.name}
-              onChange={(v) => props.onSetName(v)}/></Col>
-        <Col>Concept</Col><Col>{props.concept}</Col>
+        <Col><EditText label="Name" value={props.name} onChange={(v) => props.onSetName(v)}/></Col>
+        <Col>Concept</Col>
+        <Col><EditText label="Concept" value={props.concept} onChange={(v) => props.onSetConcept(v)}/></Col>
         <Col>Incarnation</Col><Col>{props.incarnation}</Col>
       </Row>
       <Row>
-        <Col>Player</Col><Col>{props.player}</Col>
+        <Col>Player</Col>
+        <Col><EditText label="Player" value={props.player} onChange={(v) => props.onSetPlayer(v)}/></Col>
         <Col>Virtue</Col><Col>{props.virtue}</Col>
         <Col>Agenda</Col><Col>{props.agenda}</Col>
       </Row>

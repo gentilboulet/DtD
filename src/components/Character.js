@@ -5,7 +5,7 @@ import Demon from 'components/Demon';
 
 const Character = character => {
   switch(character.type) {
-    case 'CHAR_TYPE_DEMON': return <Demon character={character} />
+    case 'CHARACTER_TYPE_DEMON': return <Demon character={character} />
     default: return <Container color="danger">Error : character type not set</Container>
   }
 };
