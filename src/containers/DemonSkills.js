@@ -2,11 +2,9 @@ import { connect } from 'react-redux';
 import DemonSkills from 'components/DemonSkills';
 
 const mapStateToProps = state => {
-  const skills = state.getIn(['character', 'skills']);
   return {
     skills : [
-      // TODO : Immutable foreach ?
-      skills.map(key => {
+      state.getIn(['character', 'skills']).map(key => {
         return {
           name : key,
           value : state.getIn(['character', 'skills', 'value'])

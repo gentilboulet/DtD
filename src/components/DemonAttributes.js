@@ -2,6 +2,7 @@ import * as React from 'react';
 import attributes from 'data/attributes.json';
 import PropTypes from 'prop-types';
 import { Container, Row } from 'reactstrap';
+import { toTitleCase } from 'string';
 import Column from 'components/Column';
 import DotBar from 'components/DotBar';
 
@@ -9,6 +10,7 @@ const attributes_types = [
   {name: 'Power', type: 'power'},
   {name: 'Finesse', type:'finesse'},
   {name: 'Resistance', type: 'resistance' }]
+
 
 class DemonAtributes extends React.PureComponent {
   render() {
@@ -25,7 +27,7 @@ class DemonAtributes extends React.PureComponent {
   renderRow(type) {
     return (
       <Row key={'attribute' + type.name}>
-      <Column width={3}>{type.name}</Column>
+      <Column width={3}>{toTitleCase(type.name)}</Column>
         {
           attributes
             .filter(a => (a.type === type.type))
@@ -33,7 +35,7 @@ class DemonAtributes extends React.PureComponent {
               return (
                 <Column width={3} key={'attribute' + a.name}>
                   <Row>
-                    <Column width={6}>{a.name}</Column>
+                    <Column width={6}>{toTitleCase(a.name)}</Column>
                     <Column width={6}>
                       <DotBar
                         length={4} value={this.props[a.name]}

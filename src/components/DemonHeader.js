@@ -3,25 +3,25 @@ import { Container, Row, Col } from 'reactstrap';
 import EditText from 'components/EditText'
 import PropTypes from 'prop-types';
 
-const DemonHeader = header => {
+const DemonHeader = props => {
   return (
     <Container>
       <Row>
         <Col>Name</Col>
-        <Col><EditText label="Name" value={header.name}
-              onChange={(v) => this.props.onSetName(v)}/></Col>
-        <Col>Concept</Col><Col>{header.concept}</Col>
-        <Col>Incarnation</Col><Col>{header.incarnation}</Col>
+        <Col><EditText label="Name" value={props.name}
+              onChange={(v) => props.onSetName(v)}/></Col>
+        <Col>Concept</Col><Col>{props.concept}</Col>
+        <Col>Incarnation</Col><Col>{props.incarnation}</Col>
       </Row>
       <Row>
-        <Col>Player</Col><Col>{header.player}</Col>
-        <Col>Virtue</Col><Col>{header.virtue}</Col>
-        <Col>Agenda</Col><Col>{header.agenda}</Col>
+        <Col>Player</Col><Col>{props.player}</Col>
+        <Col>Virtue</Col><Col>{props.virtue}</Col>
+        <Col>Agenda</Col><Col>{props.agenda}</Col>
       </Row>
       <Row>
-        <Col>Chronicle</Col><Col>{header.chronicle}</Col>
-        <Col>Vice</Col><Col>{header.vice}</Col>
-        <Col>Catalyst</Col><Col>{header.catalyst}</Col>
+        <Col>Chronicle</Col><Col>{props.chronicle}</Col>
+        <Col>Vice</Col><Col>{props.vice}</Col>
+        <Col>Catalyst</Col><Col>{props.catalyst}</Col>
       </Row>
     </Container>
   );
