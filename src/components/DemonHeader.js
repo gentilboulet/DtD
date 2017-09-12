@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import MultiBox from 'components/MultiBox';
 import EditText from 'components/EditText'
 import PropTypes from 'prop-types';
 
 const DemonHeader = props => {
+  const virtuesData = [
+    {name: 'aaaa', description: <div>aaaa</div>},
+    {name: 'bbbb', description: <div>aaaab</div>},
+    {name: 'cccc', description: <div>ccccc</div>}
+  ];
   return (
     <Container>
       <Row>
@@ -16,12 +22,14 @@ const DemonHeader = props => {
       <Row>
         <Col>Player</Col>
         <Col><EditText label="Player" value={props.player} onChange={(v) => props.onSetPlayer(v)}/></Col>
-        <Col>Virtue</Col><Col>{props.virtue}</Col>
+        <Col>Virtue</Col>
+        <Col><MultiBox label="Virtue" data={virtuesData} value={[props.virtue]} multiple={true} onChange={(v) => this.onSetVirtue(v)}/></Col>
         <Col>Agenda</Col><Col>{props.agenda}</Col>
       </Row>
       <Row>
         <Col>Chronicle</Col><Col>{props.chronicle}</Col>
-        <Col>Vice</Col><Col>{props.vice}</Col>
+        <Col>Vice</Col>
+        <Col><MultiBox label="Vice" data={virtuesData} value={[props.vice]} onChange={(v) => this.onSetVice(v)}/></Col>
         <Col>Catalyst</Col><Col>{props.catalyst}</Col>
       </Row>
     </Container>

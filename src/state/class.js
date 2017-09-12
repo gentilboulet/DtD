@@ -27,6 +27,19 @@ const _default = {
     merits: Immutable.Map({}),
     aspirations: Immutable.Map({}),
     cipher: Immutable.Map({ interlocks : Immutable.Map({}), truth : '' })
+  }),
+  layout: Immutable.Map({
+    page: '/'
+  }),
+  data: Immutable.Map({
+    virtues: Immutable.List([
+      {name: 'happy', description: 'placeholder'},
+      {name: 'smart', description: 'placeholder'}
+    ]),
+    vice: Immutable.List([
+      {name: 'greedy', description: 'placeholder'},
+      {name: 'cheeky', description: 'placeholder'}
+    ])
   })
 };
 

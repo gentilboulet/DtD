@@ -11,7 +11,7 @@ const mapStateToProps = state => {
     virtue: state.getIn(['character', 'virtue']),
     incarnation: state.getIn(['character', 'incarnation']),
     agenda: state.getIn(['character', 'agenda']),
-    catalyst: state.getIn(['character', 'catalyst'])
+    catalyst: state.getIn(['character', 'catalyst']),
   };
 };
 
