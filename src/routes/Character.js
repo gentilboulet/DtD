@@ -1,17 +1,17 @@
 import * as React from 'react';
 
 import AppHeader from 'components/AppHeader';
-import DataSourceSelector from 'containers/DataSourceSelector';
+import Character from 'containers/Character';
 
-class Homepage extends React.PureComponent {
+class CharacterRoute extends React.PureComponent {
   render() {
     return (
       <div>
         <AppHeader />
-        <DataSourceSelector />
+        <Character />
       </div>
     );
   }
 }
 
-export default Homepage;
+export default CharacterRoute;

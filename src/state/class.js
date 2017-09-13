@@ -32,6 +32,7 @@ const _default = {
     page: '/'
   }),
   data: Immutable.Map({
+    source: '',
     virtues: Immutable.List([
       {name: 'happy', description: 'placeholder'},
       {name: 'smart', description: 'placeholder'}

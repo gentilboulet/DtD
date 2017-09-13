@@ -16,6 +16,7 @@ import registerServiceWorker from 'registerServiceWorker';
 
 /* Routes */
 import Homepage from 'routes/Homepage';
+import Character from 'routes/Character';
 import Export from 'routes/Export';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -34,6 +35,7 @@ ReactDOM.render(
       <Router>
         <Container>
           <Route exact={true} path="/" component={Homepage} />
+          <Route exact={true} path="/character" component={Character} />
           <Route exact={true} path="/export" component={Export} />
         </Container>
       </Router>
