@@ -26,7 +26,9 @@ const _default = {
     skills: Immutable.Map({}),
     merits: Immutable.Map({}),
     aspirations: Immutable.Map({}),
-    cipher: Immutable.Map({ interlocks : Immutable.Map({}), truth : '' })
+    cipher: Immutable.Map({ interlocks : Immutable.Map({}), truth : '' }),
+    size: 5,
+    cover: 7,
   }),
   layout: Immutable.Map({
     page: '/'

@@ -12,7 +12,7 @@ const attributes_types = [
   {name: 'Resistance', type: 'resistance' }]
 
 
-class DemonAtributes extends React.PureComponent {
+class Character9Attributes extends React.PureComponent {
   render() {
     return (
       <Container>
@@ -51,7 +51,7 @@ class DemonAtributes extends React.PureComponent {
   }
 }
 
-DemonAtributes.propTypes = {
+Character9Attributes.propTypes = {
   strength: PropTypes.number.isRequired,
   dexterity: PropTypes.number.isRequired,
   stamina: PropTypes.number.isRequired,
@@ -64,4 +64,4 @@ DemonAtributes.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-export default DemonAtributes;
+export default Character9Attributes;

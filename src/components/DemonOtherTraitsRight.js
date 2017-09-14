@@ -3,54 +3,21 @@ import { Container, Row } from 'reactstrap';
 import Column from 'components/Column';
 import DotBar from 'components/DotBar';
 
+import CharacterHealth from 'containers/CharacterHealth';
+import CharacterWillpower from 'containers/CharacterWillpower';
+import DemonCover from 'containers/DemonCover';
+
 class DemonOtherTraitsRight extends React.PureComponent {
   render() {
     return (
       <Container>
-        {this.renderHealth()}
-        {this.renderWillpower()}
-        {this.renderCover()}
+        <Row><Column><CharacterHealth /></Column></Row>
+        <Row><Column><CharacterWillpower /></Column></Row>
+        <Row><Column><DemonCover /></Column></Row>
         {this.renderPrimum()}
         {this.renderAether()}
         {this.renderDerivatedValues()}
       </Container>
-    );
-  }
-
-  renderHealth() {
-    return (
-      <Row><Column>
-        <Row><Column>Health</Column></Row>
-        <Row>
-          <Column>
-            <Row><Column><DotBar length={12} value={0} /></Column></Row>
-            <Row><Column><DotBar length={12} value={0} shape="square"/></Column></Row>
-          </Column>
-        </Row>
-      </Column></Row>
-    );
-  }
-
-  renderWillpower() {
-    return (
-      <Row><Column>
-        <Row><Column>Willpower</Column></Row>
-        <Row>
-          <Column>
-            <Row><Column><DotBar length={10} value={0} /></Column></Row>
-            <Row><Column><DotBar length={10} value={0} shape="square"/></Column></Row>
-          </Column>
-        </Row>
-      </Column></Row>
-    );
-  }
-
-  renderCover() {
-    return (
-      <Row><Column>
-        <Row><Column>Cover</Column></Row>
-        <Row><Column><DotBar length={10} value={0} /></Column></Row>
-      </Column></Row>
     );
   }
 

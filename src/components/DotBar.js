@@ -33,7 +33,7 @@ class DotBar extends React.PureComponent {
     return (
       <div style={style} >
         {this.renderLeftestDot()}
-        {range(0, this.props.length).map(n => this.renderOneDot(n<=this.props.value && n > 0, n))}
+        {range(1, this.props.length).map(n => this.renderOneDot(n<=this.props.value && n > 0, n))}
       </div>
     );
   }

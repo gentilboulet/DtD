@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DemonAttributes from 'components/DemonAttributes';
+import Character9Attributes from 'components/Character9Attributes';
 
 const mapStateToProps = state => {
   return {
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-) (DemonAttributes);
+) (Character9Attributes);
