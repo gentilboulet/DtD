@@ -1,28 +1,24 @@
 import * as React from 'react';
-import { Card, CardTitle, CardBlock, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Card, CardTitle, CardBlock, Button } from 'reactstrap'
+import hello from 'hellojs/dist/hello.all.js';
+import { MsGraph } from 'config';
 
 class DataSourceCardOneNote extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      id: '',
-    };
-
-    this.onTextChange = this.onTextChange.bind(this);
-    this.onConnect = this.onConnect.bind(this);
+    this.doLogin = this.doLogin.bind(this);
   }
 
-  onTextChange(id) {
-    if (id === this.state.id) { return; }
-    this.setState({
-      id: id
-    });
-  }
-
-  onConnect() {
-    if (this.state.id.length === 0) { return; }
-    this.props.onConnect(this.state.id);
+  doLogin() {
+    console.log('doLoging()');
+    const msft = hello('msft');
+    /*msft.login({ scope: MsGraph.scope })
+    .then(
+      () => this.props.history.push('/') ,
+      err => console.error(err.error.message)
+    );*/
+    this.props.onConnect({token: 'abcd'});
   }
 
   render() {
@@ -30,11 +26,7 @@ class DataSourceCardOneNote extends React.PureComponent {
       <Card>
         <CardBlock>
           <CardTitle>OneNote</CardTitle>
-              <FormGroup>
-                <Label for="url">Notebook URL</Label>
-                <Input type="text" name="url" id="url" placeholder="Enter an id" onChange={(e) => this.onTextChange(e.target.value)} />
-              </FormGroup>
-              <Button onClick={this.onConnect}>Connect !</Button>
+          <Button onClick={this.doLogin}>Connect to your account!</Button>
         </CardBlock>
       </Card>
     );

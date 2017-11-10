@@ -5,23 +5,15 @@ import DataSourceCardOneNote from 'components/DataSourceCardOneNote';
 
 class DataSourceSelector extends React.PureComponent {
   render() {
-    if (this.props.source === '') {
-      return (
-        <Container>
-          <div><h2>Please select an available data source :</h2></div>
-          <CardDeck>
-            <DataSourceCardOneNote onConnect={(options) => this.props.onSelect('OneNote', options)}/>
-            <DataSourceCardOffline onClick={() => this.props.onSelect('offline')}/>
-          </CardDeck>
-        </Container>
-      );
-    } else if (this.props.source === 'offline') {
-      return <div>Soon </div>;
-    } else if (this.props.source === 'OneNote') {
-      return <div>Soon </div>;
-    } else {
-      return <div>Error : unknown datasource ??</div>
-    }
+    return (
+      <Container>
+        <div><h3>Please select an available data source :</h3></div>
+        <CardDeck>
+          <DataSourceCardOneNote onConnect={(options) => this.props.onSelect('onenote', options)}/>
+          <DataSourceCardOffline onClick={() => this.props.onSelect('offline')}/>
+        </CardDeck>
+      </Container>
+    );
   }
 }
 

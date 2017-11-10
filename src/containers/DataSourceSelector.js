@@ -2,9 +2,7 @@ import { connect } from 'react-redux';
 import DataSourceSelector from 'components/DataSourceSelector';
 
 const mapStateToProps = state => {
-  return {
-    source: state.getIn(['data', 'source']),
-  };
+  return { };
 };
 
 const mapDispatchToProps = dispatch => {

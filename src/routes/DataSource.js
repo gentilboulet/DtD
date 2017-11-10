@@ -1,16 +1,17 @@
 import * as React from 'react';
 
 import AppHeader from 'components/AppHeader';
+import DataSourceSwitch from 'containers/DataSourceSwitch';
 
-class Homepage extends React.PureComponent {
+class DataSource extends React.PureComponent {
   render() {
     return (
       <div>
         <AppHeader />
-        <div>Nothing new here !</div>
+        <DataSourceSwitch />
       </div>
     );
   }
 }
 
-export default Homepage;
+export default DataSource;
